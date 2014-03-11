@@ -1,0 +1,13 @@
+#about {
+	position: relative;
+	margin-left: 55px;
+	/*margin: 20px;*/
+	padding: 15px;
+	text-align: left;
+	text-align :justify;
+}
+#about img {
+	position: relative;
+	float: right;
+	margin: 20px;
+}

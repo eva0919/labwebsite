@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NTU IM BI Lab</title>
+  <script src="/assets/icon.png"></script>
+  <link href="/assets/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/assets/layout.css" rel="stylesheet" type="text/css">
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <!--<%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>-->
+</head>
+<body>
+	<!-- <div class="up_banner">
+		<div id="banner_text" class="container">NATIONAL TAIWAN UNIVERSITY</div>
+	</div> -->
+	<div class="banner">
+		<div class="middle" >
+			<a href="/"><img src="/assets/1525398_763222387025830_1629440098_n.jpg"></a>
+		</div>
+		
+	</div>
+	<div class="middle" id="content">
+		<div class="content_page">
+		<%= yield %>
+		</div>
+		<div id="menu">
+			<div id="list" >
+				<a href="/page/about"><div class="list_form list_hover">
+					About the Lab
+				</div></a>
+				<a href="/page/recognition"><div class="list_form list_hover">
+					Recognition
+				</div></a>
+				<div class="list_form list_hover">
+					Research and Demos
+					<div class='list_form_second'>
+						<div class='list_form_second_content list_hover'>Text mining</div>
+						<div class='list_form_second_content list_hover'>Text mining</div>
+						<div class='list_form_second_content list_hover'>Text mining</div>
+						<div class='list_form_second_content list_hover'>Text mining</div>
+					</div>
+				</div> 
+				<a href="/page/papersandconferences"><div class="list_form list_hover" >
+					Papers and Conferences
+				</div></a>
+				<a href="/page/researchgrants"><div class="list_form list_hover">
+					Research Grants
+				</div></a>
+				<a href="/page/people"><div class="list_form list_hover">
+					People
+				</div></a>
+				<a href="/page/resourcesformisandbilab"><div class="list_form list_hover">
+					Resources for MIS and BI Lab
+				</div></a>
+				<a href="/page/photogallery"><div class="list_form list_hover">
+					Photo Gallery
+				</div></a>
+				<a href="/page/contactus"><div class="list_form list_hover">
+					Contact Us
+				</div></a>
+				<a href="/page/bilabintranet"><div class="list_form list_hover">
+					BI Lab Intranet
+				</div></a>
+				<div class="list_form list_hover">
+					Welcome to the BI Lab(Message from Director)
+				</div>
+
+
+					
+				
+			</div>
+			
+		</div>
+		
+	</div>
+	<div class="bottom_line">
+		<div id="copy_right">
+			Copyright © 2014 The National Taiwan university. All rights reserved.
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	$( document ).ready(function(){
+		var h = $(".content_page").css("height");
+		// var data = h + "px";
+		console.log(h);
+		$("#menu").css("height",h);
+		$("#menu").css("height","+=12");
+		$("div.list_form:has(.list_form_second) ").append('<div class="arrow-right"></div>');
+		$("div.list_form:has(.list_form_second) ").click(function(){
+			event.preventDefault();
+			$("div.list_form:has(.list_form_second) ").addClass('list_hover');
+			$("div.list_form:has(.list_form_second) ").css("color","white");
+			$(this).removeClass('list_hover');
+			$(this).css("color","#A2A2A2");
+			$('.list_form_second').css("display","none");
+			$(this).children('.list_form_second').css("display","block");
+			$(this).children('.list_form_second').css("color","white");
+			var h = $(this).css("height");
+			$(this).children('.list_form_second').css("top",h);
+			$(this).children('.list_form_second').css("top","+=75");
+			
+
+		});
+	});
+</script>
+</html>
